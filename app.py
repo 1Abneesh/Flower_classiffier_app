@@ -160,7 +160,7 @@ div.stButton > button:active {
 </style>""", unsafe_allow_html=True)
 
 if st.button("Next page"):
-    nav_page("info")
+    nav_page("Development")
 
 st.balloons()
 # local_css("pages.css")
