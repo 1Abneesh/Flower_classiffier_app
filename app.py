@@ -17,6 +17,42 @@ import plotly.express as px
 from streamlit.components.v1 import html
 # from streamlit import dcc
 
+import base64
+
+st.set_page_config(
+    page_title="Flower species recognition",
+    page_icon="🌻🌹",
+    layout='wide'
+)
+
+# company logo taken from https://stackoverflow.com/questions/73251012/put-logo-and-title-above-on-top-of-page-navigation-in-sidebar-of-streamlit-multi
+# from PIL import Image
+# import streamlit as st
+
+# You can always call this function where ever you want
+
+def add_logo():
+    st.markdown(
+        """
+        <style>
+            [data-testid="stSidebarNav"] {
+                background-image: url(http://placekitten.com/200/200);
+                background-repeat: no-repeat;
+                padding-top: 120px;
+                background-position: 20px 20px;
+            }
+            [data-testid="stSidebarNav"]::before {
+                margin-left: 20px;
+                margin-top: 20px;
+                font-size: 30px;
+                position: relative;
+                top: 100px;
+            }
+        </style>
+        """,
+        unsafe_allow_html=True,
+    )
+add_logo()
 
 
 def nav_page(page_name, timeout_secs=3):
@@ -44,11 +80,7 @@ def nav_page(page_name, timeout_secs=3):
     """ % (page_name, timeout_secs)
     html(nav_script)
 
-st.set_page_config(
-    page_title="Flower species recognition",
-    page_icon="🌻🌹",
-    layout='wide'
-)
+
 custom_style = """
 <style>
 body {
